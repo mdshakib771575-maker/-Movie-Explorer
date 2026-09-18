@@ -5,11 +5,11 @@ const MovieModal = ({ movie, onClose }) => {
 
   return (
     <div
-      onClick={onClose}
+    
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
     >
       <div
-        onClick={(e) => e.stopPropagation()}
+       
         className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl bg-slate-900"
       >
         {/* Close Button */}

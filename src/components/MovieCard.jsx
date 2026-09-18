@@ -1,4 +1,4 @@
-const MovieCard = ({ movie, onDetails }) => {
+const MovieCard = ({ movie, setSelectedMovie }) => {
   return (
     <div className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-lg transition duration-300 hover:-translate-y-1 hover:border-amber-500/50 mb-5">
 
@@ -31,7 +31,7 @@ const MovieCard = ({ movie, onDetails }) => {
         </div>
 
         <button
-          onClick={() => onDetails(movie)}
+          onClick={() => setSelectedMovie(movie)}
           className="w-full rounded-lg bg-amber-500 px-4 py-2.5 font-semibold text-slate-950 transition hover:bg-amber-400 active:scale-95"
         >
           See Details

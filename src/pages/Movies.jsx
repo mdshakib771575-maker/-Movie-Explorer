@@ -66,7 +66,7 @@ const Movies = () => {
               <MovieCard
                 key={movie.id}
                 movie={movie}
-                onDetails={setSelectedMovie}
+                setSelectedMovie={setSelectedMovie}
               />
             ))}
       </div>
@@ -75,7 +75,6 @@ const Movies = () => {
         <MovieModal
           movie={selectedMovie}
           onClose={() => setSelectedMovie(null)}
-          onDetails={setSelectedMovie}
         />
       )}
     </div>
