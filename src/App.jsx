@@ -14,15 +14,6 @@ const router = createBrowserRouter([
     {
       index:true,
       element:<Home/>,
-      // loader:async()=>{
-      //  const res = await fetch(`https://api.tvmaze.com/shows`);
-      //  console.log(res);
-      //  if(!res){
-      //   throw new Error("Could Not Movies Found")
-      //  }
-      
-      //  return  res.json();
-      // }
     },
     {
       path:"/movies",
