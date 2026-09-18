@@ -1,16 +1,75 @@
-# React + Vite
+# 🎬 Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Movie Explorer is a responsive web application where users can explore TV shows and movies, search for shows by title, and view detailed information in a modal.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[Live Website](https://movie-explorer-navy-one.vercel.app/movies)
 
-## React Compiler
+## 📂 GitHub Repository
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[GitHub Repository](https://github.com/mdshakib771575-maker/-Movie-Explorer)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🎬 Browse movies and TV shows
+- 🔍 Search shows by title
+- ⭐ Display show ratings
+- 📅 Display release year/date
+- 🖼️ Show movie/show posters
+- 📖 View detailed information in a modal
+- 📱 Fully responsive design
+- ❌ Close details modal easily
+- 🔄 API-based dynamic data
+
+## 🛠️ Technologies Used
+
+- React.js
+- JavaScript (ES6+)
+- React Router
+- Tailwind CSS
+- Lucide React
+- TVMaze API
+- Vite
+
+## 🔗 API
+
+This project uses the TVMaze API.
+
+### All Shows
+`https://api.tvmaze.com/shows`
+
+### Search Shows
+`https://api.tvmaze.com/search/shows?q=:query`
+
+## 📋 Main Features
+
+### Home Page
+- Responsive navigation bar
+- Hero section
+- Explore Movies button
+- Footer
+
+### Movie Listing Page
+- Search functionality
+- Dynamic API integration
+- Responsive movie/show cards
+- Rating and release date
+- See Details button
+
+### Details Modal
+- Large poster
+- Show title
+- Rating
+- Release date
+- Genres
+- Runtime
+- Summary
+- Close button
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone YOUR_GITHUB_REPO_LINK
