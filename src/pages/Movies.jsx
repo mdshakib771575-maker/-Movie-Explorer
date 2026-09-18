@@ -18,7 +18,7 @@ const Movies = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       const res = await fetch(`https://api.tvmaze.com/search/shows?q=${search}`);
-
+    
       const data = await res.json();
       console.log(data);
       // setMovies(data);

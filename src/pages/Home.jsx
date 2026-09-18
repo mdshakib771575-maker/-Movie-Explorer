@@ -1,7 +1,10 @@
 import { Link } from "react-router";
 
 const Home = () => {
+
   return (
+
+    
     <div className="relative flex-1 lg:min-h-[calc(100vh-4rem)] bg-slate-900 text-white flex items-center justify-center overflow-hidden">
 
          {/* <div className="relative bg-slate-900 text-white lg:min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden"></div> */}

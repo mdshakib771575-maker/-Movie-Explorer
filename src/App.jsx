@@ -5,25 +5,33 @@ import MainLayout from './layout/MainLayout';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
 import NotFound from './components/Not-Found';
+import ErrorPage from './components/ErrorPage';
+
+
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:<MainLayout/>,
+    errorElement:<ErrorPage/>,
+   
     children:[
     {
       index:true,
       element:<Home/>,
+      
     },
     {
       path:"/movies",
-      element:<Movies></Movies>
+      element:<Movies></Movies>,
+       errorElement:<ErrorPage/>,
     },
   
     {
       path:"*",
-      element:<NotFound></NotFound>
+      element:<NotFound></NotFound>,
+      
     }
   
     ]

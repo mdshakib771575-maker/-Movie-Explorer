@@ -1,6 +1,6 @@
 const MovieCard = ({ movie, onDetails }) => {
   return (
-    <div className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-lg transition duration-300 hover:-translate-y-1 hover:border-amber-500/50">
+    <div className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-lg transition duration-300 hover:-translate-y-1 hover:border-amber-500/50 mb-5">
 
       {/* Poster */}
       <div className="aspect-[2/3] overflow-hidden bg-slate-800">
