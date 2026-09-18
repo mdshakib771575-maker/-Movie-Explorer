@@ -2,19 +2,14 @@
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
-// import MovieModal from "../components/MovieModal";
-// import { useLoaderData } from "react-router";
+import MovieModal from "../components/MovieModal";
 
 const Movies = () => {
   const [search, setSearch] = useState("")
   const [movies, setMovies] = useState([])
-  // const [selectedMovie, setSelectedMovie] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
-
-  // console.log(search);
-  console.log(movies);
-
-  const filterMovies = movies.filter((book)=>{
+  const filterMovies = movies.filter((book) => {
     const match = book.name.toLowerCase().includes(search.toLowerCase())
     return match
   })
@@ -31,6 +26,7 @@ const Movies = () => {
     fetchMovies();
   }, [search]);
 
+
   useEffect(() => {
     const mov = async () => {
       const res = await fetch(`https://api.tvmaze.com/shows`);
@@ -44,9 +40,6 @@ const Movies = () => {
     mov()
   }, [])
 
-
-
-
   return (
     <div className="w-11/12 mx-auto">
 
@@ -54,8 +47,7 @@ const Movies = () => {
         <div className="relative flex">
           <Search
             size={20}
-            className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400"
-          />
+            className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400" />
 
           <input
             type="text"
@@ -67,22 +59,25 @@ const Movies = () => {
         </div>
       </div>
 
-           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-   {
-    filterMovies.length === 0 ? <div className="text-white text-2xl w-6xl text-center">No Movies Meatch Your Search</div>
-    :  filterMovies.map((movie) => (
-      <MovieCard
-       key={movie.id}
-       movie={movie}
-      // onDetails={setSelectedMovie}
-    />
-  ))}
-   
-  
-</div>
+      <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+        {
+          filterMovies.length === 0 ? <div className="text-white text-2xl w-6xl text-center">No Movies Meatch Your Search</div>
+            : filterMovies.map((movie) => (
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+                onDetails={setSelectedMovie}
+              />
+            ))}
+      </div>
 
-
-
+      {selectedMovie && (
+        <MovieModal
+          movie={selectedMovie}
+          onClose={() => setSelectedMovie(null)}
+          onDetails={setSelectedMovie}
+        />
+      )}
     </div>
   );
 };
