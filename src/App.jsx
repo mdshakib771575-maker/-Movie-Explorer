@@ -6,15 +6,14 @@ import Home from './pages/Home';
 import Movies from './pages/Movies';
 import NotFound from './components/Not-Found';
 import ErrorPage from './components/ErrorPage';
-
-
-
+import LoadingPage from './components/Loading';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:<MainLayout/>,
     errorElement:<ErrorPage/>,
+    hydrateFallbackElement:<LoadingPage></LoadingPage>,
    
     children:[
     {
@@ -25,7 +24,7 @@ const router = createBrowserRouter([
     {
       path:"/movies",
       element:<Movies></Movies>,
-       errorElement:<ErrorPage/>,
+      
     },
   
     {

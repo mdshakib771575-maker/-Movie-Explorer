@@ -8,17 +8,20 @@ const Movies = () => {
   const [search, setSearch] = useState("")
   const [movies, setMovies] = useState([])
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [type, SetType] = useState("all")
+  console.log(type);
 
-  const filterMovies = movies.filter((book) => {
-    const match = book.name.toLowerCase().includes(search.toLowerCase())
-    return match
+  const filterMovies = movies.filter((movie) => {
+    const matchName = movie.name.toLowerCase().includes(search.toLowerCase())
+      const matchType = type==="all" || movie.genres.includes(type)
+    return matchName && matchType
   })
 
 
   useEffect(() => {
     const fetchMovies = async () => {
       const res = await fetch(`https://api.tvmaze.com/search/shows?q=${search}`);
-    
+
       const data = await res.json();
       console.log(data);
       // setMovies(data);
@@ -43,8 +46,8 @@ const Movies = () => {
   return (
     <div className="w-11/12 mx-auto">
 
-      <div className="w-full max-w-2xl mx-auto mt-8 mb-10">
-        <div className="relative flex">
+      <div className=" mx-auto mt-8 mb-10 flex gap-10 ">
+        <div className="relative flex w-full   ">
           <Search
             size={20}
             className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -57,6 +60,35 @@ const Movies = () => {
             className="w-full rounded-xl border border-slate-700 bg-slate-900 py-3.5 pl-12 pr-1 text-white outline-none placeholder:text-slate-500 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
           />
         </div>
+
+
+        <div>
+          <select
+            onChange={(e) => SetType(e.target.value)}
+            className="text-white w-50 rounded-xl border border-slate-700 bg-slate-900 py-3.5">
+            <option value="all">All types</option>
+            <option value="Drama">Drama</option>
+            <option value="Science-Fiction">Science-Fiction</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Action">Action</option>
+            <option value="Crime">Crime</option>
+            <option value="Horror">Horror</option>
+            <option value="Romance">Romance</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Family">Family</option>
+            <option value="Supernatural">Supernatural</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Anime">Anime</option>
+            <option value="Comedy">Comedy</option>
+            <option value="History">History</option>
+            <option value="Music">Music</option>
+            <option value="Medical">Medical</option>
+            <option value="Legal">Legal</option>
+            <option value="Espionage">Espionage</option>
+          </select>
+        </div>
+
       </div>
 
       <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
